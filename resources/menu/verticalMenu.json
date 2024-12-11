@@ -1,0 +1,50 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home",
+      "slug": "dashboard"
+    },
+    {
+      "icon": "menu-icon tf-icons bx bx-building",
+      "name": "Branches",
+      "slug": "property-listings"
+    },
+    {
+      "name": "Property Management",
+      "icon": "menu-icon tf-icons bx bx-building-house",
+      "slug": "property-layouts"
+    },
+    {
+      "name": "Client Management",
+      "icon": "menu-icon tf-icons bx bx-user",
+      "slug": "client-management"
+    },
+    {
+      "name": "Owner Management",
+      "icon": "menu-icon tf-icons bx bx-id-card",
+      "slug": "account-settings"
+    },
+    {
+      "icon": "menu-icon tf-icons bx bx-user-circle",
+      "name": "User Management",
+      "slug": "property-listings"
+    },
+    {
+      "name": "Payments & Invoices",
+      "icon": "menu-icon tf-icons bx bx-money",
+      "slug": "ui-components"
+    },
+    {
+      "icon": "menu-icon tf-icons bx bx-timer",
+      "name": "Appointments",
+      "slug": "property-listings"
+    },
+    {
+      "icon": "menu-icon tf-icons bx bx-cog",
+      "name": "Settings",
+      "slug": "property-listings"
+    }
+  ]
+}
