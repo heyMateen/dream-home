@@ -86,6 +86,7 @@ Route::group([
 
         //branches routes
         Route::get('/branches', [BranchController::class, 'index'])->name('branches');
+        Route::post('store', [BranchController::class, 'store'])->name('branches.store'); 
 
         //users table routes
         Route::get('/users', [UserController::class, 'index'])->name('users');
