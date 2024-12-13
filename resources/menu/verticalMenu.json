@@ -1,15 +1,16 @@
 {
   "menu": [
     {
-      "url": "/",
+      "url": "/admin/dashboard",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home",
-      "slug": "dashboard"
+      "slug": "admin.dashboard"
     },
     {
+      "url" : "/admin/branches",
       "icon": "menu-icon tf-icons bx bx-building",
       "name": "Branches",
-      "slug": "property-listings"
+      "slug": "admin.branches"
     },
     {
       "name": "Property Management",
@@ -27,9 +28,10 @@
       "slug": "account-settings"
     },
     {
+      "url" :"/admin/users",
       "icon": "menu-icon tf-icons bx bx-user-circle",
       "name": "User Management",
-      "slug": "property-listings"
+      "slug": "admin.users"
     },
     {
       "name": "Payments & Invoices",
