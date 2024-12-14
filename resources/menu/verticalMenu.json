@@ -1,52 +1,52 @@
 {
   "menu": [
     {
-      "url": "/admin/dashboard",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home",
-      "slug": "admin.dashboard"
+      "slug": "admin.dashboard",
+      "url": "/admin/dashboard"
     },
     {
-      "url" : "/admin/branches",
       "icon": "menu-icon tf-icons bx bx-building",
       "name": "Branches",
-      "slug": "admin.branches"
+      "slug": "admin.branches.view",
+      "url": "/admin/branches"
     },
     {
       "name": "Property Management",
       "icon": "menu-icon tf-icons bx bx-building-house",
-      "slug": "property-layouts"
+      "slug": "admin.properties.view",
+      "url": "/admin/properties"
     },
     {
       "name": "Client Management",
       "icon": "menu-icon tf-icons bx bx-user",
-      "slug": "client-management"
+      "slug": "admin.clients.view",
+      "url": "/admin/clients"
     },
     {
       "name": "Owner Management",
       "icon": "menu-icon tf-icons bx bx-id-card",
-      "slug": "account-settings"
-    },
-    {
-      "url" :"/admin/users",
-      "icon": "menu-icon tf-icons bx bx-user-circle",
-      "name": "User Management",
-      "slug": "admin.users"
-    },
-    {
-      "name": "Payments & Invoices",
-      "icon": "menu-icon tf-icons bx bx-money",
-      "slug": "ui-components"
+      "slug": "admin.owners.view",
+      "url": "/admin/owners"
     },
     {
       "icon": "menu-icon tf-icons bx bx-timer",
       "name": "Appointments",
-      "slug": "property-listings"
+      "slug": "admin.appointments.view",
+      "url": "/admin/appointments"
+    },
+    {
+      "name": "Transactions",
+      "icon": "menu-icon tf-icons bx bx-money",
+      "slug": "admin.transactions.view",
+      "url": "/admin/transactions"
     },
     {
       "icon": "menu-icon tf-icons bx bx-cog",
       "name": "Settings",
-      "slug": "property-listings"
+      "slug": "admin.settings.view",
+      "url": "/admin/settings"
     }
   ]
 }
