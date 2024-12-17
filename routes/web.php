@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\OwnerController;
 use App\Http\Controllers\Admin\PropertyController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\authentications\LoginController;
@@ -101,6 +102,19 @@ Route::group([
             Route::get('/update/{branch}', [BranchController::class, 'show_update_view'])->name('update.view');
             Route::post('/update/{branch_id}', [BranchController::class, 'update'])->name('update');
             Route::get('delete/{branch_id}', [BranchController::class, 'delete'])->name('delete');
+        });
+
+        //staff routes
+        Route::group([
+            'prefix' => 'staff',
+            'as' => 'staff.',
+        ], function () {
+            Route::get('/', [StaffController::class, 'index'])->name('view');
+            Route::get('/create', [StaffController::class, 'show_create_view'])->name('create.view');
+            Route::post('/store', [StaffController::class, 'store'])->name('store');
+            Route::get('/update/{staff}', [StaffController::class, 'show_update_view'])->name('update.view');
+            Route::post('/update/{staff_id}', [StaffController::class, 'update'])->name('update');
+            Route::get('delete/{staff_id}', [StaffController::class, 'delete'])->name('delete');
         });
 
         //properties routes

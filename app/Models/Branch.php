@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Branch extends Model
 {
-   protected $fillable = ['name', 'address', 'phone_number', 'postal_code', 'city', 'state', 'country'];
+   protected $fillable = ['name', 'address','email', 'phone_number', 'postal_code', 'city', 'state', 'status'];
 
    // Define the relationship to get the manager of the branch
    public function manager()

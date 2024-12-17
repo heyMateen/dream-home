@@ -13,6 +13,12 @@
       "url": "/admin/branches"
     },
     {
+      "icon": "menu-icon tf-icons bx bx-building",
+      "name": "Staff",
+      "slug": "admin.staff.view",
+      "url": "/admin/staff"
+    },
+    {
       "name": "Property Management",
       "icon": "menu-icon tf-icons bx bx-building-house",
       "slug": "admin.properties.view",
