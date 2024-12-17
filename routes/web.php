@@ -59,7 +59,7 @@ Route::get('/', function (Request $request) {
     $user = $request->user();
     if (!$user)
         return redirect()->route('login');
-    if ($user->role === 'admin') {
+    if ($user->role === 'superadmin') {
         return redirect()->route('admin.dashboard');
     } else if ($user->role === 'owner') {
         return redirect()->route('owner.dashboard');

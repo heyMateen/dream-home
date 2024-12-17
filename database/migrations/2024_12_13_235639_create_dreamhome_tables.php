@@ -24,6 +24,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->string('address');
+            $table->string('phone_number')->nullable();
             $table->string('postal_code');
             $table->string('city');
             $table->string('state');

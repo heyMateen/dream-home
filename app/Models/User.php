@@ -16,11 +16,8 @@ class User extends Authenticatable
    *
    * @var array<int, string>
    */
-  protected $fillable = [
-    'name',
-    'email',
-    'password',
-  ];
+  protected $fillable = ['first_name', 'last_name', 'email', 'role', 'password'];
+
 
   /**
    * The attributes that should be hidden for serialization.
@@ -47,5 +44,11 @@ class User extends Authenticatable
   public function getProfileImageAttribute($profile_image): string
   {
     return asset('storage/uploads/users/' . $profile_image);
+  }
+
+  // Relationship to get the staff record of this user
+  public function staff()
+  {
+    return $this->hasOne(Staff::class, 'user_id');
   }
 }

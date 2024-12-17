@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 class BranchController extends Controller
 {
     public function index(Request $request){
-        $branches = Branch::orderBy("created_at","desc")->paginate(5);
+        $branches = Branch::orderBy("created_at","desc")->with('manager')->paginate(5);
         return view("content.admin.branches.branches", compact("branches"));
     }
     public function show_create_view(Request $request){
-        
+        return view("content.admin.branches.create-branch");    
     }
     public function store(Request $request){
 
