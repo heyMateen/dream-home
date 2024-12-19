@@ -28,6 +28,7 @@
                                 <th>Last Name</th>
                                 <th>Email</th>
                                 <th>Role</th>
+                                <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -35,10 +36,13 @@
                             @foreach ($staff_members as $staff)
                                 <tr>
                                     <td>{{ $staff->id }}</td>
-                                    <td>{{ ucfirst($staff->user->first_name )}}</td> <!-- Displaying first name -->
+                                    <td>{{ ucfirst($staff->user->first_name) }}</td> <!-- Displaying first name -->
                                     <td>{{ ucfirst($staff->user->last_name) }}</td> <!-- Displaying last name -->
                                     <td>{{ $staff->user->email }}</td> <!-- Displaying email -->
                                     <td>{{ ucfirst($staff->role) }}</td> <!-- Displaying role: manager/employee -->
+                                    <td><span
+                                            class="badge bg-label-{{ $staff->status == '1' ? 'success' : 'danger' }} me-1">{{ ucfirst($staff->status == '1' ? 'active' : 'inactive') }}</span>
+                                    </td>
                                     <td>
                                         <div class="dropdown">
                                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow"

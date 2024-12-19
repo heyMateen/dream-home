@@ -88,10 +88,10 @@ Route::group([
         'as' => 'admin.',
         'middleware' => ['is_admin'],
     ], function () {
-        // Dashboard Route
+        // Dashboard Route ================================> DONE
         Route::get('/dashboard', [Analytics::class, 'index'])->name('dashboard');
 
-        //branches routes
+        //branches routes ================================> DONE
         Route::group([
             'prefix' => 'branches',
             'as' => 'branches.',
@@ -104,7 +104,7 @@ Route::group([
             Route::get('delete/{branch_id}', [BranchController::class, 'delete'])->name('delete');
         });
 
-        //staff routes
+        //staff routes  ================================> DONE
         Route::group([
             'prefix' => 'staff',
             'as' => 'staff.',
@@ -117,7 +117,7 @@ Route::group([
             Route::get('delete/{staff_id}', [StaffController::class, 'delete'])->name('delete');
         });
 
-        //properties routes
+        //properties routes  ================================> DONE
         Route::group([
             'prefix' => 'properties',
             'as' => 'properties.',
@@ -130,30 +130,30 @@ Route::group([
             Route::get('delete/{property_id}', [PropertyController::class, 'delete'])->name('delete');
         });
 
-        //client management routes
-        Route::group([
-            'prefix' => 'clients',
-            'as' => 'clients.',
-        ], function () {
-            Route::get('/', [ClientController::class, 'index'])->name('view');
-            Route::get('/create', [ClientController::class, 'show_create_view'])->name('create.view');
-            Route::post('/store', [ClientController::class, 'store'])->name('store');
-            Route::get('/update/{client}', [ClientController::class, 'show_update_view'])->name('update.view');
-            Route::post('/update/{client_id}', [ClientController::class, 'update'])->name('update');
-            Route::get('delete/{client_id}', [ClientController::class, 'delete'])->name('delete');
-        });
+        // //client management routes
+        // Route::group([
+        //     'prefix' => 'clients',
+        //     'as' => 'clients.',
+        // ], function () {
+        //     Route::get('/', [ClientController::class, 'index'])->name('view');
+        //     Route::get('/create', [ClientController::class, 'show_create_view'])->name('create.view');
+        //     Route::post('/store', [ClientController::class, 'store'])->name('store');
+        //     Route::get('/update/{client}', [ClientController::class, 'show_update_view'])->name('update.view');
+        //     Route::post('/update/{client_id}', [ClientController::class, 'update'])->name('update');
+        //     Route::get('delete/{client_id}', [ClientController::class, 'delete'])->name('delete');
+        // });
 
-        //owner management routes
+        //user management routes
         Route::group([
-            'prefix' => 'owners',
-            'as' => 'owners.',
+            'prefix' => 'users',
+            'as' => 'users.',
         ], function () {
-            Route::get('/', [OwnerController::class, 'index'])->name('view');
-            Route::get('/create', [OwnerController::class, 'show_create_view'])->name('create.view');
-            Route::post('/store', [OwnerController::class, 'store'])->name('store');
-            Route::get('/update/{owner}', [OwnerController::class, 'show_update_view'])->name('update.view');
-            Route::post('/update/{owner_id}', [OwnerController::class, 'update'])->name('update');
-            Route::get('delete/{owner_id}', [OwnerController::class, 'delete'])->name('delete');
+            Route::get('/', [UserController::class, 'index'])->name('view');
+            Route::get('/create', [UserController::class, 'show_create_view'])->name('create.view');
+            Route::post('/store', [UserController::class, 'store'])->name('store');
+            Route::get('/update/{user_id}', [UserController::class, 'show_update_view'])->name('update.view');
+            Route::post('/update/{user_id}', [UserController::class, 'update'])->name('update');
+            Route::get('delete/{user_id}', [UserController::class, 'delete'])->name('delete');
         });
 
         //appointments  routes

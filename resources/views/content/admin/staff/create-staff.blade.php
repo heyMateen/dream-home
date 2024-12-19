@@ -22,9 +22,9 @@
                         <form method="POST" action="{{ route('admin.staff.store') }}">
                             @csrf
                             <div class="mb-6">
-                                <label class="form-label" for="user_id">User</label>
+                                <label class="form-label" for="user_id">Available Staff</label>
                                 <select class="form-select" id="user_id" name="user_id">
-                                    <option value="" selected>Select User</option>
+                                    <option value="" selected>Select staff</option>
                                     @foreach ($users as $user)
                                         <option value="{{ $user->id }}" 
                                             {{ old('user_id') == $user->id ? 'selected' : '' }}>

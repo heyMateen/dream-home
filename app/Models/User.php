@@ -16,7 +16,7 @@ class User extends Authenticatable
    *
    * @var array<int, string>
    */
-  protected $fillable = ['first_name', 'last_name', 'email', 'role', 'password'];
+  protected $guarded = [];
 
 
   /**
@@ -50,5 +50,8 @@ class User extends Authenticatable
   public function staff()
   {
     return $this->hasOne(Staff::class, 'user_id');
+  }
+  public function is_already_staff(){
+    return $this->hasOne(Staff::class, 'user_id', 'id');
   }
 }

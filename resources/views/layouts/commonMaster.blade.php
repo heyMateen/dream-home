@@ -35,7 +35,7 @@
 
   <!-- Include Scripts -->
   @include('layouts/sections/scripts')
-
+  @yield('scripts')
 </body>
 
 </html>

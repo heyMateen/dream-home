@@ -13,7 +13,7 @@
       "url": "/admin/branches"
     },
     {
-      "icon": "menu-icon tf-icons bx bx-building",
+      "icon": "menu-icon tf-icons bx bx-briefcase",
       "name": "Staff",
       "slug": "admin.staff.view",
       "url": "/admin/staff"
@@ -25,16 +25,10 @@
       "url": "/admin/properties"
     },
     {
-      "name": "Client Management",
-      "icon": "menu-icon tf-icons bx bx-user",
-      "slug": "admin.clients.view",
-      "url": "/admin/clients"
-    },
-    {
-      "name": "Owner Management",
-      "icon": "menu-icon tf-icons bx bx-id-card",
-      "slug": "admin.owners.view",
-      "url": "/admin/owners"
+      "name": "User Management",
+      "icon": "menu-icon tf-icons bx bx-group",
+      "slug": "admin.users.view",
+      "url": "/admin/users"
     },
     {
       "icon": "menu-icon tf-icons bx bx-timer",

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Staff extends Model
 {
-    protected $fillable = ['user_id', 'branch_id', 'role'];
+    protected $fillable = ['user_id', 'branch_id', 'role', 'status'];
 
     // Relationship to get the user details of this staff member
     public function user()

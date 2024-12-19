@@ -8,17 +8,6 @@ return new class extends Migration {
     
     public function up()
     {
-
-        // Profiles Table
-        Schema::create('profiles', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('phone')->nullable();
-            $table->text('address')->nullable();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-        });
-
         // Branches Table
         Schema::create('branches', function (Blueprint $table) {
             $table->id();
@@ -28,25 +17,26 @@ return new class extends Migration {
             $table->string('postal_code');
             $table->string('city');
             $table->string('state');
-            $table->string('country');
+            $table->string('email')->index();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
-
-        // Staff Table
+        
+        //Staff Table
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('branch_id')->constrained('branches')->onDelete('cascade')->onUpdate('cascade');
             $table->enum('role', ['manager', 'employee']);
+            $table->enum('status', ['1', '0']);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
-
-        // Properties Table
+        
+        //Properties Table
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('owner_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('owner_id')->constrained('users')->onDelete('CASCADE')->onUpdate('CASCADE');;
             $table->string('title');
             $table->text('description');
             $table->decimal('price', 15, 2);
@@ -55,7 +45,7 @@ return new class extends Migration {
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
 
-        // Property Images Table
+        //Property Images Table
         Schema::create('property_images', function (Blueprint $table) {
             $table->id();
             $table->foreignId('property_id')->constrained('properties')->onDelete('cascade')->cascadeOnUpdate();
@@ -64,7 +54,7 @@ return new class extends Migration {
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
 
-        // Transactions Table
+        //Transactions Table
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('property_id')->constrained('properties')->onDelete('cascade')->cascadeOnUpdate();
@@ -76,14 +66,6 @@ return new class extends Migration {
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
 
-        // Portfolio Table
-        Schema::create('portfolio', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->cascadeOnUpdate();
-            $table->foreignId('property_id')->constrained('properties')->onDelete('cascade')->cascadeOnUpdate();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-        });
 
         // Appointments Table
         Schema::create('appointments', function (Blueprint $table) {
@@ -107,6 +89,6 @@ return new class extends Migration {
         Schema::dropIfExists('properties');
         Schema::dropIfExists('staff');
         Schema::dropIfExists('branches');
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists(table: 'profiles');
     }
 };
